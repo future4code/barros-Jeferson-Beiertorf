@@ -75,3 +75,4 @@ x = prompt("Digite um número")
 y = prompt("Digite outro número")
 alert(`O resultado da soma dos números é ${x + y}`)
 alert(`O resultado da multiplicação dos números é ${x * y}`)
+
