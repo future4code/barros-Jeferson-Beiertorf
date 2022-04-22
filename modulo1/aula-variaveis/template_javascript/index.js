@@ -47,16 +47,15 @@ console.log(`Olá, ${nome} você tem ${idade} anos.`)
 
     //------------- EXERCÍCIO 02-------------//
 
-let calcaAzul = "Você está usando calça azul?"
-let blusaBranca = "Você está usando blusa branca?"
-let tenisVerde = "Você está usando tênis verde?"
+    let frio = prompt("Você gosta de frio?")
+    console.log("Você gosta de frio?", frio)
+    let chuva = prompt("Você gosta de chuva?")
+    console.log("Você gosta de chuva?", chuva)
+    let sol = prompt("Você gosta de sol?")
+    console.log("Você gosta de sol?", sol)
 
-calcaAzul = true
-blusaBranca = true
-tenisVerde = false
-console.log(calcaAzul, blusaBranca, tenisVerde)
 
-    //------------- EXERCÍCIO 03-------------//
+//------------- EXERCÍCIO 03-------------//
 
     let a = 10
     let b = 25
@@ -75,3 +74,4 @@ x = prompt("Digite um número")
 y = prompt("Digite outro número")
 alert(`O resultado da soma dos números é ${x + y}`)
 alert(`O resultado da multiplicação dos números é ${x * y}`)
+
