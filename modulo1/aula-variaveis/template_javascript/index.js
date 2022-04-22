@@ -1,4 +1,4 @@
-
+/*
 //-------Exercícios de interpretação de código----------//
     //------------- EXERCÍCIO 01-------------//
 
