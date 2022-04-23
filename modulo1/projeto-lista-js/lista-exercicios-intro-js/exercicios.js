@@ -113,7 +113,7 @@ function retornaUltimoElemento(array) {
  
 }
 
-// EXERCÍCIO 11
+// EXERCÍCIO 11 
 function trocaPrimeiroEUltimo(array) {
   // implemente sua lógica aqui
   let ultNum = array.length -1
@@ -135,17 +135,40 @@ function checaIgualdadeDesconsiderandoCase(string1, string2) {
 // EXERCÍCIO 13
 function checaRenovacaoRG() {
   // implemente sua lógica aqui
+  // Escreva uma função que pergunta ao usuário o ano atual, o ano de nascimento de uma pessoa,
+  //  e o ano em que sua carteira de identidade foi emitida (nessa ordem).
+  //  A função deve imprimir no console um booleano (true ou false) que indica se a carteira precisa ser renovada ou não.
+  //  A carteira precisa ser renovada segundo os seguintes critérios:
+// - Para pessoas com menos de 20 anos, ou exatamente 20 anos, deve ser renovada de 5 em 5 anos (se for exatamente 5 anos, deve ser renovada).
+// - Para pessoas entre 20 e 50 anos, ou exatamente 50, deve ser renovada de 10 em 10 anos (se for exatamente 10 anos, deve ser renovada).
+// - Para pessoas acima dos 50 anos, deve ser renovada de 15 em 15 anos
+  let anoAtual = Number(prompt("Qual ano atual?"))
+  let anoNasc = Number(prompt("Que ano você nasceu?"))
+  let anoId = Number(prompt("Em qual ano sua carteira de identidade foi emitida?"))
 
+  let idade = anoAtual - anoNasc
+  let novaId = anoAtual - anoId
+  let validacao = false
+  
+  if (idade <= 20 && novaId >= 5){
+    validacao = true
+  }
+  if (idade > 20 && idade <= 50 && novaId >= 10){
+      validacao = true
+  }
+  if (idade > 50 && novaId >= 15){
+      validacao = true
+  }
+  console.log(validacao)
 }
 
 // EXERCÍCIO 14
 function checaAnoBissexto(ano) {
-  // implemente sua lógica aqui
+  // implemente sua lógica aqui 
 
 }
 
 // EXERCÍCIO 15
 function checaValidadeInscricaoLabenu() {
-  // implemente sua lógica aqui
-
+  // implemente sua lógica aqui]
 }
