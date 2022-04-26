@@ -64,15 +64,16 @@
 
 // let listaDeTarefas = []
 
-//  let tarefa1 = prompt("Diga a primeira tarefa")
-//  let tarefa2 = prompt("Diga a segunda tarefa")
-//  let tarefa3 = prompt("Diga a terceira tarefa")
-//   listaDeTarefas = [tarefa1, tarefa2, tarefa3]
-//   console.log(listaDeTarefas);
 
-//  indi = Number(prompt("Qual tarefa você já fez?"))
-//  listaDeTarefas.splice(indi, 1)
-//  console.log(listaDeTarefas);
+// let tarefa1 = prompt("Diga a primeira tarefa")
+// let tarefa2 = prompt("Diga a segunda tarefa")
+// let tarefa3 = prompt("Diga a terceira tarefa")
+// listaDeTarefas = [tarefa1, tarefa2, tarefa3]
+// console.log(listaDeTarefas);
+
+// indi = Number(prompt("Qual tarefa você já fez?"))
+// listaDeTarefas.splice(indi, 1)
+// console.log(listaDeTarefas);
 
 //--------------------DESAFIO 01-------------------------//
 // let frase = prompt("Digite uma frase")
