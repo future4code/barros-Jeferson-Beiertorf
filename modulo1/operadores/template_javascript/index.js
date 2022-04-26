@@ -85,18 +85,18 @@
 
  //-------------------DESAFIO-------------------//
 
- /*1.)
+//  1.)
  
- a) Calcule e mostre o valor de 77°F em  K, mostrando a unidade no console também.
+//  a) Calcule e mostre o valor de 77°F em  K, mostrando a unidade no console também.
 
-b) Calcule e mostre o valor de 80°C em °F, mostrando a unidade no console também
+// b) Calcule e mostre o valor de 80°C em °F, mostrando a unidade no console também
 
-c) Calcule e mostre o valor de 30°C em °F e K, mostrando as unidades no console também
+// c) Calcule e mostre o valor de 30°C em °F e K, mostrando as unidades no console também
 
-d) Altere o último item para que o usuário insira o valor em graus Celsius que ele deseja converter
+// d) Altere o último item para que o usuário insira o valor em graus Celsius que ele deseja converter
 
-(KELVIN) = (GRAUS_FAHRENHEIT - 32)*(5/9) + 273.15
-(GRAUS_FAHRENHEIT) = (GRAUS_CELSIUS)*(9/5) + 32*/
+// (KELVIN) = (GRAUS_FAHRENHEIT - 32)*(5/9) + 273.15
+// (GRAUS_FAHRENHEIT) = (GRAUS_CELSIUS)*(9/5) + 32
 
 // let grauFahrenheit = 77
 // let grauKelvin
