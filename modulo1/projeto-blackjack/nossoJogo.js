@@ -40,14 +40,14 @@ console.log(`${user} - cartas: ${cardUser1.texto} ${cardUser2.texto}  - pontuaç
 console.log(`${bot} - cartas: ${cardBot1.texto} ${cardBot2.texto}  - pontuação ${botSum}`);
 //7 - Além disso, deve indicar o vencedor ou um empate
 
-if(userSum > botSum){
+if(userSum > botSum || botSum >= 22){
    console.log("O usuário ganhou!");
- }else if ( userSum < botSum){
+ }else if ( userSum < botSum || userSum >= 22){
     console.log("O computador ganhou!");
-   }else if ( userSum === botSum){
+   }else if ( userSum === botSum  ){
     console.log("Os jogadores empataram!");
       }else{
-    "ERROR404"
+    console.log("ERROR404");
  }
  
 }else{
