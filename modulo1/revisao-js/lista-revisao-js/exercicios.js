@@ -97,22 +97,37 @@ function retornaSegundoMaiorESegundoMenor(array) {
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
-   
+   return `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores[0]}, ${filme.atores[1]}, ${filme.atores[2]}, ${filme.atores[3]}.`
+
 }
 
 // EXERCÍCIO 12
 function retornaPessoaAnonimizada(pessoa) {
-   
+   const anonimo = {nome:"ANÔNIMO"}
+   const novoObjeto = {...pessoa, ...anonimo}
+   return novoObjeto
 }
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {
-   
+   const autorizadas = []
+   for( let pessoa of pessoas){
+       if((pessoa.idade > 14 && pessoa.idade <60) && pessoa.altura >= 1.5){
+           autorizadas.push(pessoa)
+       }
+    } 
+   return autorizadas
 }
 
 // EXERCÍCIO 13B
 function retornaPessoasNaoAutorizadas(pessoas) {
-  
+    const naoAutorizadas = []
+    for( let pessoa of pessoas){
+        if((pessoa.idade <= 14 || pessoa.idade >= 60) || pessoa.altura <= 1.5){
+            naoAutorizadas.push(pessoa)
+        }
+     } 
+    return naoAutorizadas
 }
 
 // EXERCÍCIO 14
@@ -122,7 +137,8 @@ function retornaContasComSaldoAtualizado(contas) {
 
 // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
-  
+     consultas.sort(function(a,b){return (a.nome > b.nome)? 1 : ((b.nome > a.nome)? -1 :0)})
+     return consultas
 }
 
 // EXERCÍCIO 15B
