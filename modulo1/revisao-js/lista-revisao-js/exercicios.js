@@ -12,7 +12,6 @@ retornaTamanhoArray(array)
 function retornaArrayInvertido(array) {
   return array.reverse()
 }
-retornaTamanhoArray(array)
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
@@ -134,7 +133,13 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
- 
+    for ( conta of contas){
+        for( let i = 0; i < conta.compras.length; i++){
+            conta.saldoTotal = conta.saldoTotal - conta.compras[i]
+        }
+        conta.compras = []
+    }
+    return contas
 }
 
 // EXERCÍCIO 15A
@@ -150,12 +155,3 @@ function retornaArrayOrdenadoPorData(consultas) {
         return (a.dataDaConsulta.split("/")[i] > b.dataDaConsulta.split("/")[i])? 1 : ((b.dataDaConsulta.split("/")[i] > a.dataDaConsulta.split("/")[i])? -1 :0)})
     return consultas
 }
-
- // function ordemData(a,b){
-    //     return a.dataDaConsulta < b.dataDaConsulta
-    // }
-    // return consultas.sort(ordemData)
-
-
-// consultas.sort(function(a,b){return (a.dataDaConsulta > b.dataDaConsulta)? 1 : ((b.dataDaConsulta > a.dataDaConsulta)? -1 :0)})
-// return consultas
