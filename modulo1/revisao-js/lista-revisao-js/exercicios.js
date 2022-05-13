@@ -68,18 +68,20 @@ return result
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n){ 
     let numerosPares = []
-    for (let i = 0; i < n; i += 1) {
-        numerosPares.push(i * 2)
+    for (let i = 0; numerosPares.length < n; i++) {
+        if( i % 2 === 0){
+        numerosPares.push(i)
+        }
     }
     return numerosPares
 }
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
-    if(ladoA === ladoB && ladoA === ladoC){
+    if(ladoA === ladoB && ladoA === ladoC && ladoB === ladoC){
         return "Equilátero"
     }
-    if ((ladoA === ladoB && ladoB !== ladoC) || (ladoB === ladoC && ladoC !== ladoA) || (ladoA === ladoC && ladoB !== ladoA)){
+    if ((ladoA === ladoB && ladoB !== ladoC) || (ladoB === ladoC && ladoC !== ladoA) || (ladoA === ladoC && ladoA !== ladoB)){
         return "Isósceles"
     }
     if(ladoA !== ladoB && ladoA !== ladoC && ladoB !== ladoC){
@@ -132,7 +134,7 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
-
+ 
 }
 
 // EXERCÍCIO 15A
@@ -143,5 +145,17 @@ function retornaArrayOrdenadoAlfabeticamente(consultas) {
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
-   
+    for(let i = 0; i < 3; i++)
+    consultas.sort(function(a,b){
+        return (a.dataDaConsulta.split("/")[i] > b.dataDaConsulta.split("/")[i])? 1 : ((b.dataDaConsulta.split("/")[i] > a.dataDaConsulta.split("/")[i])? -1 :0)})
+    return consultas
 }
+
+ // function ordemData(a,b){
+    //     return a.dataDaConsulta < b.dataDaConsulta
+    // }
+    // return consultas.sort(ordemData)
+
+
+// consultas.sort(function(a,b){return (a.dataDaConsulta > b.dataDaConsulta)? 1 : ((b.dataDaConsulta > a.dataDaConsulta)? -1 :0)})
+// return consultas
