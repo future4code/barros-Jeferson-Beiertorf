@@ -1,0 +1,6 @@
+LINK DO SURGE:
+
+     encryption: *.surge.sh, surge.sh (355 days)
+             IP: 138.197.235.123
+
+   Success! - Published to boorish-wound.surge.sh
