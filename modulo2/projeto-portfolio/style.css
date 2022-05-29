@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 html body{
     background-image: url(./img/fundoblack.jpg);
     background-repeat: no-repeat;
@@ -11,9 +12,11 @@ html body{
     overflow-y: hidden;
     overflow-x: hidden;
 }
+
 header{
     padding: 20px 0;
 }
+
 header div{
     display: flex;
     flex-wrap: wrap;
@@ -21,12 +24,14 @@ header div{
     margin: 0 auto;
     padding: 0 2%;
 }
+
 .cabecalho-menu{
     padding-top: 30px;
     width: 100%;
     text-align: center;
 
 }
+
 .cabecalho-menu-item{
     font-size: large;
     color: white;
@@ -103,4 +108,33 @@ header div{
     display: flex;
     flex-direction: column;
     gap: 19px;
+}
+
+.botoes:hover{
+    background-color: gray;
+    color: white;
+}
+
+.links-sociais li a{
+    font-size: large;
+    color: white;
+    text-decoration: none;
+    font-weight: bold 15px;
+    margin-right: 15px;
+}
+
+.links-sociais li a:hover{
+    color: gray;
+}
+
+.links-projetos li a{
+    font-size: large;
+    color: white;
+    text-decoration: none;
+    font-weight: bold 15px;
+    margin-right: 15px;
+}
+
+.links-projetos li a:hover{
+    color: gray;
 }
