@@ -23,3 +23,43 @@ header .logo img{
    width: 20px;
    height: 20px;
 }
+
+.container{
+    background-color: #f2d0e0;
+    display: flex;
+   width: 20%;
+
+
+}
+
+.flex-bolos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 5px darkgray;
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.img-menu{
+    width: 25px;
+}
+
+
+
+.img-bolo{
+    width: 200px;
+}
+
+
+
+
+footer{
+    background-color: mediumvioletred;
+    display: flex;
+    justify-content: center;
+}
