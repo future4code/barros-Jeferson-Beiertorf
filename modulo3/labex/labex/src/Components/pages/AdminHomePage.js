@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom';
+import { BackgroundAdmin } from "../../Style";
 
 function AdminHomePage() {
   const navigate= useNavigate();
@@ -17,12 +18,17 @@ function AdminHomePage() {
   }
   
     return (
-      <div>
-        <h1>ADMIN PAGE</h1>
-        <button onClick={ goToLastPage }>Return</button>
-        <button onClick={ goToCreate }>Create Trip</button>
-        <button>Logout</button>
-      </div>
+
+      <BackgroundAdmin>
+        <section>
+          <h1>ADMIN PAGE</h1>
+          <div className="button">
+            <button onClick={ goToLastPage }>Return</button>
+            <button onClick={ goToCreate }>Create Trip</button>
+            <button>Logout</button>
+          </div>
+        </section>
+      </BackgroundAdmin>
     );
   }
   

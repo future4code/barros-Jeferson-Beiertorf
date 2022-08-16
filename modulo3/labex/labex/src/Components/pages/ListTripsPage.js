@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom';
+import { BackgroundListTrips, CardItem } from "../../Style";
 import {BASE_URL} from '../Constants/Constants';
 import useRequestData from "../Hooks/useRequestData";
 
@@ -10,14 +11,14 @@ function ListTripsPage() {
   const trip = dataTrip && dataTrip.trips && dataTrip.trips.map((t, i, v)=>{
     
     return (
-      <div className="Card">
+      <CardItem>
         <li>
           <h3>{t.name}</h3>
           <p>{t.description}</p>
           <p>Planeta:{t.planet}</p>
           <p>{t.durationInDays} Dias</p>
         </li>
-      </div>
+      </CardItem>
     )
     })
 
@@ -33,16 +34,19 @@ function ListTripsPage() {
   }
 // BOTÕES DE NAVEGAÇÃO //
     return (
-      <div>
+      <BackgroundListTrips>  
+          <div className="button">
+            <button onClick={ goToLastPage }>Return</button>
+            <button onClick={ goToSubscribe }>Subscribe</button>
+          </div>
+        <div className="card">
           {isLoadingTrip && "...Carregando!!! ..."}
           <ul>
           { !isLoadingTrip && dataTrip && dataTrip.trips && trip}
           </ul>
           {!isLoadingTrip && !dataTrip && erroTrip} 
-
-        <button onClick={ goToLastPage }>Return</button>
-        <button onClick={ goToSubscribe }>Subscribe</button>
-      </div>
+        </div>
+      </BackgroundListTrips>
     );
   }
   
