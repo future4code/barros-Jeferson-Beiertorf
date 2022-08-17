@@ -9,9 +9,9 @@ function AdminHomePage() {
     navigate("/create-trip")
   }
 
-  // const goToDetails =() =>{
-  //   navigate("/trip-details")
-  // }
+  const goToLogin =() =>{
+    navigate("/login-page")
+  }
 
   const goToLastPage =() =>{
     navigate(-1)
@@ -25,7 +25,7 @@ function AdminHomePage() {
           <div className="button">
             <button onClick={ goToLastPage }>Return</button>
             <button onClick={ goToCreate }>Create Trip</button>
-            <button>Logout</button>
+            <button onClick={ goToLogin }>Logout</button>
           </div>
         </section>
       </BackgroundAdmin>

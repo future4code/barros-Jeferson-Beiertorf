@@ -3,7 +3,7 @@ import ReactDatePicker from "react-datepicker";
 import { useNavigate } from 'react-router-dom';
 import {  BackgroundCreateTrip } from "../../Style";
 import 'react-datepicker/dist/react-datepicker.css'
-
+import moment from "moment";
 
 
 function CreateTripPage() {
@@ -37,7 +37,7 @@ function CreateTripPage() {
 
 // BOTÕES DE NAVEGAÇÃO// 
 const navigate= useNavigate();
-const goToLastPplanet =() =>{
+const goToLastPage =() =>{
   navigate(-1)
   // BOTÕES DE NAVEGAÇÃO// 
   }
@@ -79,8 +79,9 @@ const goToLastPplanet =() =>{
             selected={startDate}
             onChange={(date) => setStartDate(date)}
             className="date-field"
-            id="planet"
+            id="date-field"
             placeholderText="Choose date"
+            minDate={moment().toDate()}
             required
 
             />
@@ -107,7 +108,7 @@ const goToLastPplanet =() =>{
             />
         </form>
         <div className="button"> 
-          <button onClick={ goToLastPplanet }>Return</button>
+          <button onClick={ goToLastPage }>Return</button>
           <button>Send</button>
         </div>
       </div>
