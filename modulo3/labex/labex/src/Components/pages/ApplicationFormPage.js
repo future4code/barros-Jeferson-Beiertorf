@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { BackgroundAppForm } from "../../Style";
+import CountrySelector from "../Hooks/useCountrySelector";
 
 
 
@@ -51,6 +52,8 @@ const goToLastPage =() =>{
             placeholder="Name"
             value={name}
             onChange={handleInputName}
+            minLength="5"
+            required
             />
           <input
             name="age"
@@ -59,6 +62,8 @@ const goToLastPage =() =>{
             placeholder="Age"
             value={age}
             onChange={handleInputAge}
+            min="18"
+            required
             />
           <input
             name="application"
@@ -67,6 +72,8 @@ const goToLastPage =() =>{
             placeholder="Application Text"
             value={application}
             onChange={handleInputApplication}
+            minLength="30"
+            required
             />
           <input
             name="occupation"
@@ -75,7 +82,12 @@ const goToLastPage =() =>{
             placeholder="Profession"
             value={occupation}
             onChange={handleInputOccupation}
+            minLength="10"
+            required
             />
+          
+          
+
           <select 
             name="country" 
             id="country"

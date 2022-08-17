@@ -6,7 +6,7 @@ import 'react-datepicker/dist/react-datepicker.css'
 
 
 
-function CreateTripPplanet() {
+function CreateTripPage() {
   //estados dos inputs//
   const [name, setName] = useState("");
   const [planet, setPlanet] = useState("");
@@ -23,9 +23,9 @@ function CreateTripPplanet() {
   const handleInputPlanet = (e) => {
     setPlanet(e.target.value);
   };
-  const handleInputDate = (e) => {
-    setDate(e.target.value);
-  };
+  // const handleInputDate = (e) => {
+  //   setDate(e.target.value);
+  // };
   const handleInputDescription = (e) => {
     setDescription(e.target.value);
   };
@@ -53,6 +53,8 @@ const goToLastPplanet =() =>{
             placeholder="Name trip"
             value={name}
             onChange={handleInputName}
+            required
+            min="5"
             />
             
           <select
@@ -63,7 +65,7 @@ const goToLastPplanet =() =>{
             value={planet}
             onChange={handleInputPlanet}
             required>
-            <option value="choose">Choose your planet!</option>
+            <option value="choose">Choose  planet!</option>
             <option value="Mercury">Mercury</option>
             <option value="Venus">Venus</option>
             <option value="Earth">Earth</option>
@@ -79,6 +81,8 @@ const goToLastPplanet =() =>{
             className="date-field"
             id="planet"
             placeholderText="Choose date"
+            required
+
             />
             
           <input
@@ -88,14 +92,19 @@ const goToLastPplanet =() =>{
             placeholder="Description"
             value={description}
             onChange={handleInputDescription}
+            required
+            min="30"
             />
           <input
             name="durationInDays" 
             id="durationInDays"
+            type="number"
             placeholder="Duration in days"
             value={durationInDays} 
             onChange={handleInputDurationInDays} 
-            required/>
+            required
+            min="50"
+            />
         </form>
         <div className="button"> 
           <button onClick={ goToLastPplanet }>Return</button>
@@ -106,4 +115,4 @@ const goToLastPplanet =() =>{
     );
   }
   
-  export default CreateTripPplanet;
+  export default CreateTripPage;

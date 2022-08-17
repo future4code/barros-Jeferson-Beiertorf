@@ -10,7 +10,7 @@ function LoginPage() {
     const [body, onChange, clear] = useForm({email:"", password:""})
     const fazerLogin = (event) => {
         event.preventDefault()
-        axios.post(`${BASE_URL}Jeferson-Beiertorf-Barros/login`, body)
+        axios.post(`${BASE_URL}login`, body)
         .then((response)=>{
             console.log(response.data);
         }).catch((error)=>{
@@ -52,10 +52,11 @@ const goToLastPage =() =>{
                     placeholder="Password"
                     value={body.password}
                     onChange={onChange}
+                    required
                     pattern="^.{3,}"
                 />
             <div className="button">
-                <button  onClick={ goToLastPage }>Return</button>
+                <button type="buton"  onClick={ goToLastPage }>Return</button>
                 <button  onClick={ goToAdmin }>Login</button>
             </div>
             </form>

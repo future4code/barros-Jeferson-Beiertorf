@@ -18,7 +18,8 @@ export const BackgroundLogin = styled.div`
     .login-form{
         color: orange;
         background-color: black;
-        border: 2px orange solid;
+        border: 1px whitesmoke solid;
+        box-shadow: inset 0 0 10px 0 whitesmoke, 0 0 20px 0 whitesmoke;
         border-radius:3vh;
         width:50vw;
         height: 40vh;
@@ -67,7 +68,8 @@ section{
         font-size:1.4rem;
         color: orange;
         background-color: black;
-        border: 2px orange solid;
+        border: 1px whitesmoke solid;
+        box-shadow: inset 0 0 10px 0 whitesmoke, 0 0 20px 0 whitesmoke;
         border-radius:3vh;
         width:50vw;
         height: 30vh;
@@ -87,7 +89,8 @@ export const CardItem = styled.div`
     background-color:black;
     color:whitesmoke;
     border-radius: 3vh;
-    border: 2px orange solid;
+    border: 1px whitesmoke solid;
+    box-shadow: inset 0 0 10px 0 whitesmoke, 0 0 20px 0 whitesmoke;
     text-align:center;
     padding:5px;
 `
@@ -140,7 +143,8 @@ background-position:center;
 .form-register{
         color: orange;
         background-color: black;
-        border: 2px orange solid;
+        border: 1px whitesmoke solid;
+        box-shadow: inset 0 0 10px 0 whitesmoke, 0 0 20px 0 whitesmoke;
         border-radius:3vh;
         width:50vw;
         display:flex;
@@ -201,10 +205,11 @@ section{
         flex-direction:column;
         justify-content:center;
         align-items:center;
+        gap:10px;
 }
 
 button{
-        width: 12vh;
+        width: 12vh; 
         border-radius: 1vh;
         background-color:orange;
         font-weight:bold;
@@ -251,6 +256,12 @@ input{
     text-align:center;
 }
 select{
+    border: 1px solid orange;
+    border-radius:2vh;
+    text-align:center;
+}
+.date-field{
+    width:98%;
     border: 1px solid orange;
     border-radius:2vh;
     text-align:center;
