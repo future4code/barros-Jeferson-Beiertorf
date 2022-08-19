@@ -93,11 +93,26 @@ export const CardItem = styled.div`
     box-shadow: inset 0 0 10px 0 whitesmoke, 0 0 20px 0 whitesmoke;
     text-align:center;
     padding:5px;
+    list-style:none;
+`
+export const CardItemAdm = styled.div`
+    background-color:black;
+    color:whitesmoke;
+    width:25vh;
+    border-radius: 3vh;
+    border: 1px whitesmoke solid;
+    box-shadow: inset 0 0 10px 0 whitesmoke, 0 0 20px 0 whitesmoke;
+    text-align:center;
+    padding:5px;
+    list-style:none;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 0  20px;
 `
 
 export const BackgroundListTrips = styled.div`
 width:100%;
-height:100vh;
 background-image: url(${background});
 background-size:cover;
 background-repeat:no-repeat;
@@ -108,7 +123,12 @@ align-items:center;
 justify-content:center;
 flex-direction:column;
 
-
+.button{
+    display:flex;
+    align-items:center;
+    text-align:center;
+    gap:10px;
+}
 button{
     width: 30vh;
     height:4vh;
@@ -122,6 +142,7 @@ button{
 ul{
         display: flex;
         flex-wrap: wrap;
+        text-align:center;
         justify-content: center;
         align-items: center;
         gap:10px;
@@ -168,6 +189,8 @@ input{
     border-radius:2vh;
     text-align:center;
 }
+
+
 select{
     border: 1px solid orange;
     border-radius:2vh;
@@ -182,11 +205,18 @@ button{
 }
 `
 
+export const SelectCountry = styled.div`
+    border: 1px solid orange;
+    border-radius:2vh;
+    text-align:center;
+`
+
 export const BackgroundAdmin = styled.div`
 width:100%;
-height:100vh;
 background-image: url(${background});
 display:flex;
+flex-direction:column;
+gap:10px;
 text-align:center;
 align-items:center;
 justify-content:center;
@@ -197,15 +227,30 @@ section{
         font-size:1.4rem;
         color: orange;
         background-color: black;
-        border: 2px orange solid;
+        border: 1px whitesmoke solid;
+        box-shadow: inset 0 0 10px 0 whitesmoke, 0 0 20px 0 whitesmoke;
         border-radius:3vh;
         width:40vw;
-        height: 20vh;
         display:flex;
         flex-direction:column;
         justify-content:center;
         align-items:center;
         gap:10px;
+        padding-bottom:20px;
+}
+.card-adm{
+        color: orange;
+        background-color: black;
+        border: 1px whitesmoke solid;
+        box-shadow: inset 0 0 10px 0 whitesmoke, 0 0 20px 0 whitesmoke;
+        border-radius:3vh;
+        
+}
+ul{
+    display:grid;
+    padding:30px;
+    gap:10px;
+    grid-template-columns: repeat(2,1fr)
 }
 
 button{
@@ -231,7 +276,8 @@ background-position:center;
 .form-create-trip{
         color: orange;
         background-color: black;
-        border: 2px orange solid;
+        border: 1px whitesmoke solid;
+        box-shadow: inset 0 0 10px 0 whitesmoke, 0 0 20px 0 whitesmoke;
         border-radius:3vh;
         width:50vw;
         display:flex;

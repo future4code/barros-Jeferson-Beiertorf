@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { BackgroundListTrips, CardItem } from "../../Style";
 import {BASE_URL} from '../Constants/Constants';
 import useRequestData from "../Hooks/useRequestData";
+import {CardItens} from "../Hooks/useCards";
 
 function ListTripsPage() {
 
@@ -15,8 +16,9 @@ function ListTripsPage() {
         <li>
           <h3>{t.name}</h3>
           <p>{t.description}</p>
-          <p>Planeta:{t.planet}</p>
-          <p>{t.durationInDays} Dias</p>
+          <p><strong>Planet:</strong>  {t.planet}</p>
+          <p><strong>Date:</strong> {t.date}</p>
+          <p><strong>Duration: </strong>{t.durationInDays} Days</p>
         </li>
       </CardItem>
     )
@@ -39,15 +41,18 @@ function ListTripsPage() {
             <button onClick={ goToLastPage }>Return</button>
             <button onClick={ goToSubscribe }>Subscribe</button>
           </div>
-        <div className="card">
+          <div>
+            <CardItens></CardItens>
+          </div>
+        {/* <div className="card">
           {isLoadingTrip && "...Carregando!!! ..."}
           <ul>
           { !isLoadingTrip && dataTrip && dataTrip.trips && trip}
           </ul>
           {!isLoadingTrip && !dataTrip && erroTrip} 
-        </div>
+        </div> */}
       </BackgroundListTrips>
     );
   }
   
-  export default ListTripsPage;
+export default ListTripsPage;

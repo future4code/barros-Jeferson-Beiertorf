@@ -2,21 +2,36 @@ import React, { useState } from "react";
 import ReactDatePicker from "react-datepicker";
 import { useNavigate } from 'react-router-dom';
 import {  BackgroundCreateTrip } from "../../Style";
+import { useForm } from "../Hooks/useForm";
 import 'react-datepicker/dist/react-datepicker.css'
 import moment from "moment";
+import {BASE_URL} from '../Constants/Constants'
+import axios from "axios";
 
 
 function CreateTripPage() {
   //estados dos inputs//
   const [name, setName] = useState("");
   const [planet, setPlanet] = useState("");
-  const [date, setDate] = useState("");
+  // const [date, setDate] = useState("");
   const [description, setDescription] = useState("");
   const [durationInDays, setDurationInDays] = useState("");
   const [startDate, setStartDate] = useState(new Date());
+  const [form, onChange, clear] = useForm({id: "", name: "", planet: "", 	date: "", description: "", durationInDays: ""})
   //estados dos inputs//
   
   //eventos dos inputs//
+  const creatTrip = (event) => {
+    event.preventDefault()
+    axios.post(`${BASE_URL}trips`)
+    .then((response)=>{
+        console.log(response.data);
+    }).catch((error)=>{
+        console.log("ERROR");
+    })
+    clear();
+}
+
   const handleInputName = (e) => {
     setName(e.target.value);
   };
@@ -39,22 +54,23 @@ function CreateTripPage() {
 const navigate= useNavigate();
 const goToLastPage =() =>{
   navigate(-1)
-  // BOTÕES DE NAVEGAÇÃO// 
+// BOTÕES DE NAVEGAÇÃO// 
+
   }
     return (
       <BackgroundCreateTrip>  
       <div className="form-create-trip">
         <h1>Create trip</h1>
-        <form >
+        <form onSubmit={creatTrip}>
           <input
             name="name"
             id="name"
             type="text"
             placeholder="Name trip"
-            value={name}
+            value={form.name}
             onChange={handleInputName}
             required
-            min="5"
+            pattern="^.{5,}" 
             />
             
           <select
@@ -62,7 +78,7 @@ const goToLastPage =() =>{
             id="planet"
             type="number"
             placeholder="planet"
-            value={planet}
+            value={form.planet}
             onChange={handleInputPlanet}
             required>
             <option value="choose">Choose  planet!</option>
@@ -83,7 +99,6 @@ const goToLastPage =() =>{
             placeholderText="Choose date"
             minDate={moment().toDate()}
             required
-
             />
             
           <input
@@ -91,24 +106,24 @@ const goToLastPage =() =>{
             id="description"
             type="text"
             placeholder="Description"
-            value={description}
+            value={form.description}
             onChange={handleInputDescription}
             required
-            min="30"
+            pattern="^.{30,}" 
             />
           <input
             name="durationInDays" 
             id="durationInDays"
             type="number"
             placeholder="Duration in days"
-            value={durationInDays} 
+            value={form.durationInDays} 
             onChange={handleInputDurationInDays} 
             required
-            min="50"
+            pattern="^.{50,}" 
             />
         </form>
         <div className="button"> 
-          <button onClick={ goToLastPage }>Return</button>
+          <button type="button" onClick={ goToLastPage }>Return</button>
           <button>Send</button>
         </div>
       </div>

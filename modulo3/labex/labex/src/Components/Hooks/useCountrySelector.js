@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react'
-import Select from 'react-select-country-list'
+import Select from 'react-select'
 import countryList from 'react-select-country-list'
+import { SelectCountry } from '../../Style'
 
 function CountrySelector() {
   const [value, setValue] = useState('')
@@ -10,7 +11,11 @@ function CountrySelector() {
     setValue(value)
   }
 
-  return <Select options={options} value={value} onChange={changeHandler} />
+  return (
+  <SelectCountry>
+    <Select options={options} value={value} onChange={changeHandler} />
+  </SelectCountry>
+)  
 }
 
 export default CountrySelector

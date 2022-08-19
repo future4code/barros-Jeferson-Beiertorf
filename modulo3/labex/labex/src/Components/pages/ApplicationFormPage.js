@@ -2,36 +2,51 @@ import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { BackgroundAppForm } from "../../Style";
 import CountrySelector from "../Hooks/useCountrySelector";
+import { useForm } from "../Hooks/useForm";
+import {axios} from "axios"
+import { BASE_URL } from "../Constants/Constants";
 
 
-
+// https://us-central1-labenu-apis.cloudfunctions.net/labeX/:aluno/trips/:id/apply
 function ApplicationFormPage() {
 
-  //estados dos inputs//
-  const [name, setName] = useState("");
-  const [age, setAge] = useState("");
-  const [application, setApplication] = useState("");
-  const [occupation, setOccupation] = useState("");
-  const [country, setCountry] = useState("");
-  //estados dos inputs//
-  
-  //eventos dos inputs//
-  const handleInputName = (e) => {
-    setName(e.target.value);
-  };
-  const handleInputAge = (e) => {
-    setAge(e.target.value);
-  };
-  const handleInputApplication = (e) => {
-    setApplication(e.target.value);
-  };
-  const handleInputOccupation = (e) => {
-    setOccupation(e.target.value);
-  };
-  const handleInputCountry = (e) => {
-    setCountry(e.target.value);
+    
+  const [form, onChange, clear] = useForm({email:"", password:""})
+  const ApplicationForm = (event) => {
+      event.preventDefault()
+      axios.post(`${BASE_URL}trips/:id/apply`, form)
+      .then((response)=>{
+          console.log(response.data);
+      }).catch((error)=>{
+          console.log(error.message);
+      })
+      clear();
   }
-  //eventos dos inputs//
+  // //estados dos inputs//
+  // const [name, setName] = useState("");
+  // const [age, setAge] = useState("");
+  // const [application, setApplication] = useState("");
+  // const [occupation, setOccupation] = useState("");
+  // const [country, setCountry] = useState("");
+  // //estados dos inputs//
+  
+  // //eventos dos inputs//
+  // const handleInputName = (e) => {
+  //   setName(e.target.value);
+  // };
+  // const handleInputAge = (e) => {
+  //   setAge(e.target.value);
+  // };
+  // const handleInputApplication = (e) => {
+  //   setApplication(e.target.value);
+  // };
+  // const handleInputOccupation = (e) => {
+  //   setOccupation(e.target.value);
+  // };
+  // const handleInputCountry = (e) => {
+  //   setCountry(e.target.value);
+  // }
+  // //eventos dos inputs//
   
 
 // BOTÕES DE NAVEGAÇÃO// 
@@ -50,9 +65,9 @@ const goToLastPage =() =>{
             id="name"
             type="text"
             placeholder="Name"
-            value={name}
-            onChange={handleInputName}
-            minLength="5"
+            value={form.name}
+            onChange={onChange}
+            pattern="^.{3,}"
             required
             />
           <input
@@ -60,9 +75,9 @@ const goToLastPage =() =>{
             id="age"
             type="number"
             placeholder="Age"
-            value={age}
-            onChange={handleInputAge}
-            min="18"
+            value={form.age}
+            onChange={onChange}
+            min={18}
             required
             />
           <input
@@ -70,9 +85,9 @@ const goToLastPage =() =>{
             id="application"
             type="text"
             placeholder="Application Text"
-            value={application}
-            onChange={handleInputApplication}
-            minLength="30"
+            value={form.application}
+            onChange={onChange}
+            pattern="^.{30,}"
             required
             />
           <input
@@ -80,38 +95,26 @@ const goToLastPage =() =>{
             id="occupation"
             type="text"
             placeholder="Profession"
-            value={occupation}
-            onChange={handleInputOccupation}
-            minLength="10"
+            value={form.occupation}
+            onChange={onChange}
+            pattern="^.{10,}"
             required
             />
-          
-          
-
-          <select 
+          <label name="country" id="country">Select your country</label>
+          <CountrySelector
             name="country" 
             id="country"
-            value={country} 
-            onChange={handleInputCountry} 
+            value={form.country} 
+            onChange={onChange} 
             required>
-            <option value="choose">Choose your planet!</option>
-            <option value="Mercury">Mercury</option>
-            <option value="Venus">Venus</option>
-            <option value="Earth">Earth</option>
-            <option value="Mars">Mars</option>
-            <option value="Jupiter">Jupiter</option>
-            <option value="Saturn">Saturn</option>
-            <option value="Uranus">Uranus</option>
-            <option value="Neptune">Neptune</option>
-          </select>
-        </form>
+          </CountrySelector>
         <div className="button"> 
-          <button onClick={ goToLastPage }>Return</button>
-          <button>Send</button>
+          <button type="button" onClick={ goToLastPage }>Return</button>
+          <button onClick={ApplicationForm}>Send</button>
         </div>
+        </form>
       </div>
     </BackgroundAppForm>
     );
   }
-  
   export default ApplicationFormPage;
