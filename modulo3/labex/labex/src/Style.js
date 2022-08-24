@@ -2,6 +2,7 @@ import styled from "styled-components";
 import background from "./Images/Background.gif"
 
 
+
 export const BackgroundLogin = styled.div`
     width:100%;
     height:100vh;
@@ -109,6 +110,9 @@ export const CardItemAdm = styled.div`
     align-items:center;
     justify-content:space-between;
     padding: 0  20px;
+.icon-trash:hover{
+    color:orange;
+}
 `
 
 export const BackgroundListTrips = styled.div`
@@ -307,10 +311,10 @@ select{
     text-align:center;
 }
 .date-field{
-    width:98%;
-    border: 1px solid orange;
-    border-radius:2vh;
+    border: 2px solid orange;
+    border-radius:3vh;
     text-align:center;
+
 }
 button{
     width: 20vh;

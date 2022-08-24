@@ -11,11 +11,6 @@ import axios from "axios";
 
 function CreateTripPage() {
   //estados dos inputs//
-  const [name, setName] = useState("");
-  const [planet, setPlanet] = useState("");
-  // const [date, setDate] = useState("");
-  const [description, setDescription] = useState("");
-  const [durationInDays, setDurationInDays] = useState("");
   const [startDate, setStartDate] = useState(new Date());
   const [form, onChange, clear] = useForm({id: "", name: "", planet: "", 	date: "", description: "", durationInDays: ""})
   //estados dos inputs//
@@ -32,22 +27,6 @@ function CreateTripPage() {
     clear();
 }
 
-  const handleInputName = (e) => {
-    setName(e.target.value);
-  };
-  const handleInputPlanet = (e) => {
-    setPlanet(e.target.value);
-  };
-  // const handleInputDate = (e) => {
-  //   setDate(e.target.value);
-  // };
-  const handleInputDescription = (e) => {
-    setDescription(e.target.value);
-  };
-  const handleInputDurationInDays = (e) => {
-    setDurationInDays(e.target.value);
-  }
-  //eventos dos inputs//
   
 
 // BOTÕES DE NAVEGAÇÃO// 
@@ -68,7 +47,7 @@ const goToLastPage =() =>{
             type="text"
             placeholder="Name trip"
             value={form.name}
-            onChange={handleInputName}
+            onChange={onChange}
             required
             pattern="^.{5,}" 
             />
@@ -79,7 +58,7 @@ const goToLastPage =() =>{
             type="number"
             placeholder="planet"
             value={form.planet}
-            onChange={handleInputPlanet}
+            onChange={onChange}
             required>
             <option value="choose">Choose  planet!</option>
             <option value="Mercury">Mercury</option>
@@ -107,7 +86,7 @@ const goToLastPage =() =>{
             type="text"
             placeholder="Description"
             value={form.description}
-            onChange={handleInputDescription}
+            onChange={onChange}
             required
             pattern="^.{30,}" 
             />
@@ -117,7 +96,7 @@ const goToLastPage =() =>{
             type="number"
             placeholder="Duration in days"
             value={form.durationInDays} 
-            onChange={handleInputDurationInDays} 
+            onChange={onChange} 
             required
             pattern="^.{50,}" 
             />

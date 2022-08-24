@@ -10,7 +10,7 @@ library.add(fas)
 export function CardItens(){
     const [dataTrip, isLoadingTrip, erroTrip] = useRequestData(`${BASE_URL}trips`)
     console.log(dataTrip);
-    const trip = dataTrip && dataTrip.trips && dataTrip.trips.map((t, i, v)=>{
+    const trip = dataTrip && dataTrip.trips && dataTrip.trips.map((t)=>{
       
       return (
         <CardItem>
@@ -46,7 +46,9 @@ export function CardAdm(){
             <h3>{t.name}</h3>
             <p><strong>Date:</strong> {t.date}</p>
           </li>
+        <div className="icon-trash">
           <FontAwesomeIcon icon = "trash-can"></FontAwesomeIcon>
+        </div>
         </CardItemAdm>
       )
       })
