@@ -5,8 +5,8 @@ const useRequestData = ( url ) => {
     const [data, setData] = useState(undefined)
     const [isLoading, setIsLoading] = useState(undefined)
     const [erro, setErro] = useState(undefined)
-
-    useEffect(() => {
+    const [att, setAtt] = useState(true)
+     useEffect(() => {
         setIsLoading(true)
         axios.get(url).then(response =>{
             setIsLoading(false)
@@ -15,9 +15,9 @@ const useRequestData = ( url ) => {
             setIsLoading(false)
           setErro(error)
         })
-      }, [url])
+      }, [url,att])
 
-    return [data, isLoading, erro];
+    return [data, isLoading, erro, att, setAtt];
 };
 
 export default useRequestData;

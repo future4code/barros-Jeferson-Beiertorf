@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { BackgroundAppForm } from "../../Style";
 import CountrySelector from "../Hooks/useCountrySelector";
 import { useForm } from "../Hooks/useForm";
-import {axios} from "axios"
-import { BASE_URL } from "../Constants/Constants";
+import axios from "axios"
+import { BASE_URL, URL_COUNTRY } from "../Constants/Constants";
 import useRequestData from "../Hooks/useRequestData";
 
 // https://us-central1-labenu-apis.cloudfunctions.net/labeX/:aluno/trips/:id/apply
@@ -14,22 +14,34 @@ function ApplicationFormPage() {
   const [isLoading, setIsLoading] = useState(false)
   const [form, onChange, clear] = useForm({name:"", age:"",application:"",occupation:"",country:"", tripId:""})
   const [data] = useRequestData(`${BASE_URL}trips`)
-  
+  const [paises, status] = useRequestData(`${URL_COUNTRY}`)
+  // console.log(form);
+  if(status=== false){
+    console.log(paises);
+  }
+  // console.log(countrySelected);
+  // const myCountrySelected = countrySelected&&countrySelected.paises&&countrySelected.paises.map((countries)=>{
+  //   return(
+    
+  //     <option key={countries.countrySelected}></option>
+  //   )
+  // })
   const ApplicationForm = (event) => {
     event.preventDefault()
     setIsLoading(true)
-    
     const body = {
-      age: form.age,
       name: form.name,
+      age: form.age,
+      applicationText: form.application,
       profession: form.occupation,
-      country: form.country,
-      applicationText: form.application
+      country: form.country
     }
-    axios.post(`${BASE_URL}trips/${form.tripId}/apply`, body,{
-      headers: {
-          "Content-Type": "application/json"
-      }})
+    
+    // console.log({body});
+    const test = localStorage.getItem("token")
+
+    // console.log(test);
+    axios.post(`${BASE_URL}trips/${form.tripId}/apply`, body)
     .then(()=>{
       setIsLoading(false)
           alert("Cadastro efetuado com sucesso!")
@@ -40,11 +52,10 @@ function ApplicationFormPage() {
         })
         clear();
       }
-      
       // BOTÕES DE NAVEGAÇÃO// 
       const navigate= useNavigate();
       const goToLastPage =() =>{
-        navigate(-1)
+        navigate("/list-trips")
         // BOTÕES DE NAVEGAÇÃO// 
       }
     return (
@@ -114,8 +125,7 @@ function ApplicationFormPage() {
             <CountrySelector
               name="country" 
               id="country"
-              value={form.country} 
-              onChange={onChange} 
+              changeCountry = {onChange}
               required/>
         <div className="button"> 
           <button type="button" onClick={ goToLastPage }>Return</button>

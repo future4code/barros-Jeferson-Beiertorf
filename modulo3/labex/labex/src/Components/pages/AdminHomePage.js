@@ -1,24 +1,27 @@
+import axios from "axios";
 import React from "react";
 import { useNavigate } from 'react-router-dom';
 import { BackgroundAdmin } from "../../Style";
+import { BASE_URL } from "../Constants/Constants";
 import { CardAdm } from "../Hooks/useCards";
 import { useProtectPage } from "../Hooks/useProtectPage";
 
 function AdminHomePage() {
   useProtectPage();
-  const navigate= useNavigate();
 
+
+  //NAVEGAÇÃO//
+  const navigate= useNavigate();
   const goToCreate = () =>{
     navigate("/create-trip")
   }
-
   const goToLogin =() =>{
     navigate("/login-page")
   }
-
   const goToHome =() =>{
     navigate("/")
   }
+  //NAVEGAÇÃO//
   
     return (
 

@@ -9,8 +9,8 @@ function ListTripsPage() {
 
 // BOTÕES DE NAVEGAÇÃO //
   const navigate= useNavigate();
-  const goToLastPage =() =>{
-    navigate(-1)
+  const goToHome =() =>{
+    navigate("/")
   }
   const goToSubscribe = () =>{
     navigate("/form-page")
@@ -19,7 +19,7 @@ function ListTripsPage() {
     return (
       <BackgroundListTrips>  
           <div className="button">
-            <button onClick={ goToLastPage }>Return</button>
+            <button onClick={ goToHome }>Home</button>
             <button onClick={ goToSubscribe }>Subscribe</button>
           </div>
           <div>

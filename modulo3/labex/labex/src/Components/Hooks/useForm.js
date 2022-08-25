@@ -6,6 +6,7 @@ export function useForm(initialState){
 
 const onChange = (event)=>{
     const {name, value} = event.target
+    console.log(event);
     setForm({...form, [name]:value})
 }
 const clear = ()=>{

@@ -3,7 +3,7 @@ import Select from 'react-select'
 import countryList from 'react-select-country-list'
 import { SelectCountry } from '../../Style'
 
-function CountrySelector() {
+function CountrySelector(props) {
   const [value, setValue] = useState('')
   const options = useMemo(() => countryList().getData(), [])
 
@@ -13,9 +13,10 @@ function CountrySelector() {
 
   return (
   <SelectCountry>
-    <Select options={options} value={value} onChange={changeHandler} />
+    <Select options={options} name="country" value={value} onChange={props.changeCountry} />
   </SelectCountry>
 )  
 }
 
 export default CountrySelector
+
