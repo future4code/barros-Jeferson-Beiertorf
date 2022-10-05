@@ -18,4 +18,6 @@ const sum = (first, second) => {
 
 console.log(sum(3,6));
 
-// console.log("exercicio 4");
+console.log("exercicio 4");
+
+console.log(sum);
