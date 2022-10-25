@@ -1,0 +1,16 @@
+{
+  "name": "package-json",
+  "version": "1.0.0",
+  "description": "",
+  "type":"module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js",
+    "exercicio1": "node ./exercicio1.js",
+    "exercicio2": "node ./exercicio2.js",
+    "exercicio3": "node ./exercicio3.js"
+    
+  },
+  "author": "Jeferson Nascimento Beiertorf",
+  "license": "ISC"
+}
