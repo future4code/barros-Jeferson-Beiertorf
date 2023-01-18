@@ -37,3 +37,23 @@ export class UserBusiness {
 findUser = () => {};
 deleteUser = () => {};
 }
+
+// - Exercício 1
+    
+//     **Cadastro de usuários: `POST`
+//     caminho: `"/createUser"`**
+    
+//     Crie um endpoint que faça o cadastro de usuários na aplicação. O endpoint deve receber as seguintes informações na **requisição**, em seu body:
+
+
+// - Exercício 2
+    
+//     **Buscar todos os usuários: `GET`**
+    
+//     **Caminho:** `"/all"`
+
+// - Exercício 3
+    
+//     A**pagar um usuário:** `DELETE`
+    
+//     **Caminho**: `"/:id"`
