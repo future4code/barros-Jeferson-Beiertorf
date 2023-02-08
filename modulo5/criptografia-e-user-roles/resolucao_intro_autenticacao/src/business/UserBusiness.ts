@@ -43,7 +43,7 @@ export class UserBusiness {
         email,
         password,
       };
-   
+   //////////
       await userDatabase.insertUser(user);
       const token = tokenGenerator.generateToken(id)
 
